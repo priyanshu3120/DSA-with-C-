@@ -9,11 +9,19 @@ public:
             mp[nums]++;
         }
         int maxLucky=-1;
-        for(auto& [num,freq] : mp)
+        // for(auto& [num,freq] : mp)
+        // {
+        //     if(num == freq)
+        //     {
+        //         maxLucky=max(maxLucky,num);
+        //     }
+        // }
+
+        for(auto& it : mp)
         {
-            if(num == freq)
+            if(it.first == it.second)
             {
-                maxLucky=max(maxLucky,num);
+                maxLucky=max(maxLucky,it.first);
             }
         }
         return maxLucky;
