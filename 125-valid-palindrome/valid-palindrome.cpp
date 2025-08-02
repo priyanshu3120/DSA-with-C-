@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isAlphaNum(char ch)
     {
-        return isalnum(ch);
+        return isalnum(static_cast<unsigned char>(ch));
     }
     bool isPalindrome(string s) {
         int i = 0, j = s.size() - 1;
