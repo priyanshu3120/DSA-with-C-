@@ -1,26 +1,47 @@
 class Solution {
 public:
     long long zeroFilledSubarray(vector<int>& nums) {
-        long long result=0;
+        
+        // 1st appraoch using a maths 
+        // long long result=0;
+        // int n=nums.size();
+        // int i=0;
+        // while(i < n)
+        // {
+        //     long long l=0;
+        //     if(nums[i] == 0)
+        //     {
+        //         while(i < n && nums[i] == 0)
+        //         {
+        //             l++;
+        //             i++;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         i++;
+        //     }
+        //     result += l*(l+1)/2;
+        // }
+        // return result;
 
+        // 2nd approached to sloved the problem
         int n=nums.size();
-        int i=0;
-        while(i < n)
+
+        long long result=0;
+        int count=0;
+
+        for(int i=0; i<n; i++)
         {
-            long long l=0;
             if(nums[i] == 0)
             {
-                while(i < n && nums[i] == 0)
-                {
-                    l++;
-                    i++;
-                }
+                count++;
             }
             else
             {
-                i++;
+                count=0;
             }
-            result += l*(l+1)/2;
+            result += count;
         }
         return result;
     }
